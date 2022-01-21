@@ -98,5 +98,5 @@ let fifthStore = {
 }
 
 function random(custMinHour, custMaxHour){
-  return 
+  return Math.floor(Math.random() * (custMaxHour - custMinHour) + custMinHour);
 }
