@@ -1,4 +1,5 @@
 'use strict';
+console.log('Pats Salmon Cookies Online')
 
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
@@ -21,6 +22,9 @@ let firstStore = {
   }
 };
 
+firstStore.numCustomersPerHour();
+firstStore.cookieForEachHour();
+
 let secondStore = {
   storeName : 'Tokyo',
   custMaxHour : 24,
@@ -39,6 +43,9 @@ let secondStore = {
     }
   }
 };
+
+secondStore.numCustomersPerHour();
+secondStore.cookieForEachHour();
 
 let thirdStore = {
   storeName : 'Dubai',
@@ -59,6 +66,9 @@ let thirdStore = {
   }
 };
 
+thirdStore.numCustomersPerHour();
+thirdStore.cookieForEachHour();
+
 let fourthStore = {
   storeName : 'Paris',
   custMaxHour : 38,
@@ -77,6 +87,9 @@ let fourthStore = {
     }
   }
 };
+
+fourthStore.numCustomersPerHour();
+fourthStore.cookieForEachHour();
 
 let fifthStore = {
   storeName : 'Lima',
@@ -97,6 +110,10 @@ let fifthStore = {
   }
 }
 
+fifthStore.numCustomersPerHour();
+fifthStore.cookieForEachHour();
+
 function random(custMinHour, custMaxHour){
   return Math.floor(Math.random() * (custMaxHour - custMinHour) + custMinHour);
 }
+
