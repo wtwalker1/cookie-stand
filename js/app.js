@@ -22,14 +22,15 @@ let firstStore = {
     for(let i = 0; i < hours.length; i++){
       console.log(this.hourlyCustomer[i]);
       console.log(this.avgCookiePerSale);
-      let oneHour = this.hourlyCookies.push(Math.floor(this.hourlyCustomer[i] * this.avgCookiePerSale));
+      let oneHour = Math.floor(this.hourlyCustomer[i] * this.avgCookiePerSale);
+      this.hourlyCookies.push(oneHour);
       this.totalDailyCookies += oneHour;
     }
   },
   render(){
     for(let i = 0; i < hours.length; i++){
       let listItem = document.createElement('li');
-      listItem.textContent = hours[i] + this.hourlyCookies[i] + 'cookies';
+      listItem.textContent = hours[i] + ' ' +this.hourlyCookies[i] + ' cookies';
       // console.log(listItem);
       storeList.appendChild(listItem);
     }
@@ -60,17 +61,17 @@ let secondStore = {
     for(let i = 0; i < hours.length; i++){
       // console.log(this.hourlyCustomer);
       console.log(this.avgCookiePerSale);
-      let oneHour = this.hourlyCookies.push(Math.floor(this.hourlyCustomer[i] * this.avgCookiePerSale));
+      let oneHour = Math.floor(this.hourlyCustomer[i] * this.avgCookiePerSale);
+      this.hourlyCookies.push(oneHour);
       this.totalDailyCookies += oneHour;
     }
   },
   render(){
     for(let i = 0; i < hours.length; i++){
       let listItem = document.createElement('li');
-      listItem.textContent = hours[i] + this.hourlyCookies[i] + 'cookies';
+      listItem.textContent = hours[i] + ' ' +this.hourlyCookies[i] + ' cookies';
       // console.log(listItem);
       storeList.appendChild(listItem);
-
     }
     let listTotal = document.createElement('li');
     listTotal.textContent = 'totals: ' + this.totalDailyCookies + ' cookies.';
@@ -99,17 +100,17 @@ let thirdStore = {
     for(let i = 0; i < hours.length; i++){
       // console.log(this.hourlyCustomer);
       console.log(this.avgCookiePerSale);
-      let oneHour = this.hourlyCookies.push(Math.floor(this.hourlyCustomer[i] * this.avgCookiePerSale));
+      let oneHour = Math.floor(this.hourlyCustomer[i] * this.avgCookiePerSale);
+      this.hourlyCookies.push(oneHour);
       this.totalDailyCookies += oneHour;
     }
   },
   render(){
     for(let i = 0; i < hours.length; i++){
       let listItem = document.createElement('li');
-      listItem.textContent = hours[i] + this.hourlyCookies[i] + 'cookies';
+      listItem.textContent = hours[i] + ' ' +this.hourlyCookies[i] + ' cookies';
       // console.log(listItem);
       storeList.appendChild(listItem);
-
     }
     let listTotal = document.createElement('li');
     listTotal.textContent = 'totals: ' + this.totalDailyCookies + ' cookies.';
@@ -138,14 +139,15 @@ let fourthStore = {
     for(let i = 0; i < hours.length; i++){
       // console.log(this.hourlyCustomer);
       console.log(this.avgCookiePerSale);
-      let oneHour = this.hourlyCookies.push(Math.floor(this.hourlyCustomer[i] * this.avgCookiePerSale));
+      let oneHour = Math.floor(this.hourlyCustomer[i] * this.avgCookiePerSale);
+      this.hourlyCookies.push(oneHour);
       this.totalDailyCookies += oneHour;
     }
   },
   render(){
     for(let i = 0; i < hours.length; i++){
       let listItem = document.createElement('li');
-      listItem.textContent = hours[i] + this.hourlyCookies[i] + 'cookies';
+      listItem.textContent = hours[i] + ' ' +this.hourlyCookies[i] + ' cookies';
       // console.log(listItem);
       storeList.appendChild(listItem);
     }
@@ -176,7 +178,8 @@ let fifthStore = {
     for(let i = 0; i < hours.length; i++){
       // console.log(this.hourlyCustomer);
       console.log(this.avgCookiePerSale);
-      let oneHour = this.hourlyCookies.push(Math.floor(this.hourlyCustomer[i] * this.avgCookiePerSale));
+      let oneHour = Math.floor(this.hourlyCustomer[i] * this.avgCookiePerSale);
+      this.hourlyCookies.push(oneHour);
       this.totalDailyCookies += oneHour;
     }
   },
