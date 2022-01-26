@@ -5,14 +5,29 @@ const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm',
 let storeList = document.getElementById('storeList');
 console.log(storeList);
 
-function CookieStore(storeName, custMaxHour, custMinHour, avgCookiePerSale, hourlyCustomer, hourlyCookies){
+function CookieStore(storeName, custMaxHour, custMinHour, avgCookiesPerSale, hourlyCustomers, hourlyCookies){
   this.storeName = storeName;
   this.custMaxHour = custMaxHour;
   this.custMinHour = custMinHour;
-  this.avgCookiePerSale = avgCookiePerSale;
-  this.hourlyCustomers = hourlyCustomer;
+  this.avgCookiesPerSale = avgCookiesPerSale;
+  this.hourlyCustomers = hourlyCustomers;
   this.hourlyCookies = hourlyCookies;
+  this.numCustomersPerHour();
+  this.cookiesForEachHour();
+  CookieStore.storeArray.push(this);
 }
+
+CookieStore.prototype.numCustomersPerHour = function(){
+  for(let i = 0; i < hours.length; i++){
+    this.hourlyCustomers.push(random(this.custMinHour, this.custMaxHour));
+  }
+
+};
+CookieStore.prototype.cookiesForEachHour = function(){
+  for(let i = 0; i < hours.length; i++){
+    this.hourlyCookies.push(Math.round(this.hourlyCustomers[i] * this.avgCookiePerSale));
+  }
+};
 
 // let firstStore = {
 //   storeName : 'Seattle',
