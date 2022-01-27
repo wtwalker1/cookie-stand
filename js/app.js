@@ -77,7 +77,29 @@ CookieStore.prototype.render = function() {
   cookieTable.appendChild(locRow);
 };
 
+CookieStore.prototype.footer = function(){
 
+  let footerRow = document.createElement ('tr');
+  let nameCell = document.createElement ('td');
+  nameCell.textContent = 'Totals';
+  footerRow.appendChild(nameCell);
+  let totalTally = 0;
+  for(let i = 0; i < hours.length; i++){
+    let hourlyTally = 0;
+    for(let j = 0; j < CookieStore.storeArray.length; j++){
+      hourlyTally += CookieStore.storeArray[j].hourlyCookies[i];
+      totalTally += CookieStore.storeArray[j].hourlyCookeis[i]
+    }
+    let totalCell = document.createElement('td');
+    totalCell.textContent = hourlyTally;
+    footerRow.appendChild(totalCell);
+  }
+
+  let totalFinalCell = document.createElement('td');
+  totalFinalCell.textContent = totalTally;
+  footerRow.appendChild(totalFinalCell);
+  cookieTable.appendChild(footerRow);
+};
 
 
 
