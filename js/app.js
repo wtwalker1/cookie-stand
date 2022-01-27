@@ -17,6 +17,9 @@ function CookieStore(storeName, custMaxHour, custMinHour, avgCookiesPerSale, hou
   CookieStore.storeArray.push(this);
 }
 
+CookieStore.storeArray = [];
+console.log(CookieStore.storeArray);
+
 CookieStore.prototype.numCustomersPerHour = function(){
   for(let i = 0; i < hours.length; i++){
     this.hourlyCustomers.push(random(this.custMinHour, this.custMaxHour));
@@ -28,6 +31,57 @@ CookieStore.prototype.cookiesForEachHour = function(){
     this.hourlyCookies.push(Math.round(this.hourlyCustomers[i] * this.avgCookiePerSale));
   }
 };
+
+function random(min, max){
+  return Math.round(Math.random() * (max - min) + min);
+}
+new CookieStore('Seattle', 65, 23, 6.3, [], []);
+new CookieStore('Tokyo', 24, 3, 1.2, [], []);
+new CookieStore('Dubai', 38, 11, 3.7, [], []);
+new CookieStore('Paris', 20, 11, 2.3, [], []);
+new CookieStore('Lima', 16, 2, 4.6, [], []);
+
+CookieStore.prototype.tableHeader = function(){
+  let cookieTable = document.getElementById('storeList');
+  let headerRow = document.createElement('tr');
+  let locationCell = document.createElement('th');
+  locationCell.textContent = 'Location';
+  headerRow.appendChild(locationCell);
+  for(let i = 0; i < hours.length; i++){
+    let hoursOpen = document.createElement('td');
+    hoursOpen.textContent = hours[i];
+    headerRow.appendChild(hoursOpen);
+  }
+  let totalCell = document.createElement('td');
+  totalCell.textContent = 'total';
+  headerRow.appendChild(totalCell);
+  cookieTable.appendChild(headerRow);
+};
+
+CookieStore.prototype.render = function() {
+  let locRow = document.createElement('tr');
+  let locationCell = document.createElement('td');
+  locationCell.textContent = this.storeName;
+  locRow.appendChild(locationCell);
+  let totalCookieSum = 0;
+  for(let j = 0; j < hours.length; j++){
+    let hourlyData = document.createElement('td');
+    hourlyData.textContent = this.hourlyCookies[j];
+    totalCookieSum += this.hourlyCookies[j];
+    locRow.appendChild(hourlyData);
+  }
+
+  let allStoreDayTotals = document.createElement('td');
+  allStoreDayTotals.textContent = totalCookieSum;
+  locRow.appendChild(allStoreDayTotals);
+  cookieTable.appendChild(locRow);
+};
+
+
+
+
+
+
 
 // let firstStore = {
 //   storeName : 'Seattle',
