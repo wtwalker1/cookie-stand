@@ -319,4 +319,3 @@ CookieStore.prototype.footer = function(){
 //   let storeList = document.createElement('li');
 //   console.log(storeArray[i].hourlyCookies + 'hello');
 // }
-
