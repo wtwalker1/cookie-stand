@@ -103,7 +103,12 @@ CookieStore.prototype.footer = function(){
 };
 
 
+CookieStore.prototype.tableHeader();
+for(let i =0; i < CookieStore.storeArray.length; i++){
+  CookieStore.storeArray[i].render();
+}
 
+// CookieStore.prototype.footer();
 
 
 // let firstStore = {
