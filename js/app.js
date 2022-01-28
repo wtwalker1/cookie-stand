@@ -29,7 +29,7 @@ CookieStore.prototype.numCustomersPerHour = function(){
 };
 CookieStore.prototype.cookiesForEachHour = function(){
   for(let i = 0; i < hours.length; i++){
-    this.hourlyCookies.push(Math.round(this.hourlyCustomers[i] * this.avgCookiePerSale));
+    this.hourlyCookies.push(Math.round(this.hourlyCustomers[i] * this.avgCookiesPerSale));
   }
 };
 
@@ -89,7 +89,7 @@ CookieStore.prototype.footer = function(){
     let hourlyTally = 0;
     for(let j = 0; j < CookieStore.storeArray.length; j++){
       hourlyTally += CookieStore.storeArray[j].hourlyCookies[i];
-      totalTally += CookieStore.storeArray[j].hourlyCookeis[i];
+      totalTally += CookieStore.storeArray[j].hourlyCookies[i];
     }
     let totalCell = document.createElement('td');
     totalCell.textContent = hourlyTally;
@@ -108,7 +108,7 @@ for(let i =0; i < CookieStore.storeArray.length; i++){
   CookieStore.storeArray[i].render();
 }
 
-// CookieStore.prototype.footer();
+CookieStore.prototype.footer();
 
 
 // let firstStore = {
