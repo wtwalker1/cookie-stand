@@ -2,6 +2,7 @@
 console.log('Pats Salmon Cookies Online');
 
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+let cookieTable = document.getElementById('storeList');
 let storeList = document.getElementById('storeList');
 console.log(storeList);
 
@@ -88,7 +89,7 @@ CookieStore.prototype.footer = function(){
     let hourlyTally = 0;
     for(let j = 0; j < CookieStore.storeArray.length; j++){
       hourlyTally += CookieStore.storeArray[j].hourlyCookies[i];
-      totalTally += CookieStore.storeArray[j].hourlyCookeis[i]
+      totalTally += CookieStore.storeArray[j].hourlyCookeis[i];
     }
     let totalCell = document.createElement('td');
     totalCell.textContent = hourlyTally;
